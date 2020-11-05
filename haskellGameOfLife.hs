@@ -2,12 +2,10 @@ import Data.List
 import Control.Monad
 import Data.Map (fromListWith, toList)
 
-{- *** Question 2.1 *** -}
 pretty :: [[String]] -> String
 pretty
      = unlines.concat
 
-{- *** Question 2.2 *** -}
 type Point
  = ( Int, Int )
 
@@ -42,7 +40,6 @@ visualisation x y z = visualisation' y x y z
  visualisation' a x 0 z = []
  visualisation' a x y z = concat (rowGenerate x (sort(feeder (a-y) (concat z))) ) : visualisation' a x (y-1) z
 
-{- *** Question 2.3 *** -}
 -- returns all 9 neighbours for a point
 generateNeighbourList :: Point -> [ Point ]
 generateNeighbourList (x, y)
